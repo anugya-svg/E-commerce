@@ -9,19 +9,29 @@ const CartReducer = (state = cart, action)=>{
         case ADD_CART:
             const isItemExists = state.some((product) => product.id === action.payload.id)
             if (isItemExists) {
-                return state.map((product) => {
+                const cart= state.map((product) => {
                     if (product.id === action.payload.id) {
-                        return {...product, qty: product.qty + 1 }
+                        return { ...product, qty: product.qty + 1 }
+                        
                     }
                     else {
                         return product
                     }
                 })
+                localStorage.setItem('cart',JSON.stringify(cart))
+                return cart
             }
-            else
-            return [ ...state, {...action.payload,qty:1} ]
+            else{
+
+                const cart = [...state, { ...action.payload, qty: 1 }]
+                localStorage.setItem('cart',JSON.stringify(cart))
+                // localStorage.setItem('name','Rahull')
+                return cart
+            }
         case REMOVE_CART:
-            return state.filter((product)=>action.payload!==product.id)
+            const cart = state.filter((product) => action.payload !== product.id)
+            localStorage.setItem('cart',JSON.stringify(cart))
+            return cart
             
         default:
             return state

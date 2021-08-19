@@ -3,11 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addCart } from '../redux/cart/CartActions'
 import {removeCart} from '../redux/cart/CartActions'
 function ProductPage() {
-    const product = useSelector(state => {if (state.product)
-        return state.product
-    })
+    const product = JSON.parse(localStorage.getItem('product'))
     const dispatch = useDispatch()
-    
     if(product)
     return (
         <div>
