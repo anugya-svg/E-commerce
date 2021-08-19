@@ -18,7 +18,7 @@ const ProductsList = () => {
         return (
             products.map(product =>
                 <div key={product.id}>
-                    <Link to={`${product.id}`}>
+                    <Link to={`product/${product.id}`}>
                         <p onClick={() => dispatch(productClicked(product))}> {product.title}</p>
                     </Link>
                 </div>

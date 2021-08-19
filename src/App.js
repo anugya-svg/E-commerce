@@ -1,6 +1,7 @@
 import './App.css';
 import ProductPage from './pages/ProductPage';
 import ProductsList from './pages/ProductList';
+import CartPage from "./pages/CartPage"
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,8 +14,11 @@ function App() {
           <Route exact path="/">
             <ProductsList />
           </Route>
-          <Route exact path="/:id">
+          <Route exact path="/product/:id">
             <ProductPage />
+          </Route>
+          <Route exact path="/cart">
+            <CartPage/>
           </Route>
       </Switch>
     </Router>
