@@ -5,24 +5,27 @@ import CartPage from "./pages/CartPage"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,  
+  Route,
 } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/">
-            <ProductsList />
-          </Route>
-          <Route exact path="/product/:id">
-            <ProductPage />
-          </Route>
-          <Route exact path="/cart">
-            <CartPage/>
-          </Route>
+        <Route exact path="/">
+          <ProductsList />
+        </Route>
+        <Route exact path="/product/:id">
+          <ProductPage />
+        </Route>
+        <Route exact path="/cart">
+          <CartPage />
+        </Route>
       </Switch>
     </Router>
-    
+
   );
 }
 

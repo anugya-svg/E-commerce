@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { productClicked } from "../redux"
 
 import { fetchProducts } from '../redux/products/ProductsActions'
+import ProductCard from '../components/productPage/ProductCard'
 
 const ProductsList = () => {
     const products = useSelector(state => state.products.products)
@@ -12,24 +13,27 @@ const ProductsList = () => {
     useEffect(() => {
         dispatch(fetchProducts())
     }, [])
-    
+
     // const state = useSelector(state => state.)
     const Part = () => {
         return (
-            products.map(product =>
-                <div key={product.id}>
-                    <Link to={`product/${product.id}`}>
-                        <p onClick={() => dispatch(productClicked(product))}> {product.title}</p>
-                    </Link>
+            <div className="container">
+                <div className="row">
+                    {
+                        products.map(product =>
+                            <ProductCard key={product.id} imgURL={product.image} id={product.id} />
+                        )
+                    }
                 </div>
-            )
+            </div>
+
         )
     }
-    
-        if(products)
-        return <Part/>
+
+    if (products)
+        return <Part />
     else
         return <p>Loadinggggggggg</p>
-    
+
 }
 export default ProductsList
