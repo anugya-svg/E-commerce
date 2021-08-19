@@ -14,7 +14,6 @@ const ProductsList = () => {
         dispatch(fetchProducts())
     }, [])
 
-    // const state = useSelector(state => state.)
     const Part = () => {
         return (
             <div className="container">
