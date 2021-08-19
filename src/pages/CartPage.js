@@ -1,45 +1,67 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    maxWidth: '736ch',
-        backgroundColor: theme.palette.background.paper,
-
-  },
-  inline: {
-    display: 'inline',
-  },
-}));
+import Button from '@material-ui/core/Button';
+import styles from "./Cart.module.css"
 function CartPage() {
-    const classes = useStyles();
-    
     return (
         <div className="container">
-            
             <div className="row">
                 <div className="col-md-8">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            Cras justo odio
-                        </li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                </div>
-                <div className="col-md-4">
+                    <table className="table table-sm">
+                    <thead className={styles.border}>
+                        <tr >
+                        <th scope="col">Product</th>
+                        <th scope="col"></th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        
+                        <tr className={styles.border}>
+                            <th scope="row" className="p-4">
+                                    <img className={styles.img_cart} src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1965579/2017/6/16/11497597399593-Puma-Men-Black-Smash-Colourblocked-Leather-Sneakers-9641497597399402-1.jpg" alt="" />                                                                    
+                            </th>
+                            <td className="p-4">
+                                <h6>Puma</h6>
+                                <p>Men Leather Sneaker's</p>
+                            </td>
+                            <td className="p-4">$239</td>
+                            <td className="p-4">
+                                <div className="d-flex">
+                                <span className={styles.qty}>+</span>
+                                <span className={styles.qty} style={{backgroundColor:"#f7f7f7"}}>1</span>
+                                <span className={styles.qty}>-</span>
+                                </div>
+                            </td>
+                            <td className="p-4">$360</td>
+                        </tr>
+                        <tr className={styles.border}>
+                            <th scope="row" className="p-4">
+                                    <img className={styles.img_cart} src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11166294/2020/3/24/c099ba46-0d43-4684-a909-e8dc5709bb321585041823906-Levis-Men-Shirts-2061585041821702-1.jpg" alt="" />                                                                    
+                            </th>
+                            <td className="p-4">
+                                <h6>Levi's</h6>
+                                <p>Men Blue Slim fit solid shirt</p>
+                            </td>
+                            <td className="p-4">$239</td>
+                            <td className="p-4">
+                                <div className="d-flex">
+                                <span className={styles.qty}>+</span>
+                                <span className={styles.qty} style={{backgroundColor:"#f7f7f7"}}>1</span>
+                                <span className={styles.qty}>-</span>
+                                </div>
+                            </td>
+                            <td className="p-4">$360</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div className="col-md-4">
 
-                </div>
             </div>
         </div>
+    </div>
     )
 }
 
