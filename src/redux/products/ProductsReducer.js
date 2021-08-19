@@ -18,11 +18,14 @@ const ProductsReducer = (state = initialState, action) => {
             }
         case FETCH_PRODUCTS_SUCCESS:
             
-            return {
+            const x= {
                 loading: false,
                 products: action.payload,
                 error:''
             }
+            localStorage.setItem('products',JSON.stringify(x))
+            return x
+
         case FETCH_PRODUCTS_FAILURE:
             return {
                 loading: false,
