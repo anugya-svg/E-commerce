@@ -11,7 +11,7 @@ function CartPage() {
     return (
         <div className="container mt-5">
             <div className="row">
-                <div className="col-md-8 col-sm-12">
+                <div className="col ">
                     <table className="table table-sm text-center">
                     <thead className={styles.border}>
                         <tr >
@@ -51,7 +51,7 @@ function CartPage() {
                     </tbody>
                 </table>
                 </div>
-                <div className="col-md-4  col-sm-12">
+                <div className="col ">
                     <Subtotal/>
                 </div>
             </div>
