@@ -35,7 +35,7 @@ function TrendingSection() {
 
     return (
         <div className="trending-section my-5">
-            <div className="fw-bolder fs-3 py-3 ls-1">Trending Section</div>
+            <div className="fw-bold fs-2 py-2 ls-1">Trending Now</div>
             <div>
                 <Swiper
                     slidesPerView={changeSlideCount()}

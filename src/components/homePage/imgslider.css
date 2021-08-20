@@ -22,5 +22,37 @@
     cursor: pointer;
     color: #fff;
     background-color: rgb(202, 201, 201);
-    padding: 1.5rem 0.2rem;
+    padding: 1.5rem 0rem;
+}
+.color-white {
+    color: #fff !important;
+}
+.category-banner-home .each-section > div:last-child {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.737114914325105) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.category-banner-home .each-section .shopnow-button {
+    color: #cebd9c;
+    cursor: pointer;
+}
+.category-banner-home .each-section:hover .shopnow-button {
+    animation: showShopButton 0.5s ease forwards;
+}
+.category-banner-home .each-section:hover img {
+    transform: scale(1.1);
+    transition: all;
+    transition-duration: 1s;
+}
+
+@keyframes showShopButton {
+    0% {
+        letter-spacing: 0px;
+        display: none;
+    }
+    100% {
+        display: block;
+        letter-spacing: 2px;
+    }
 }
