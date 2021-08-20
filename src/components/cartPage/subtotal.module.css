@@ -1,0 +1,10 @@
+.subtotal{
+    border:1px solid #e6e6e6;
+    padding-right: 55px;
+    padding-left: 30px;
+    width:340px;
+}
+.heading{
+    font-size: 15px;
+    font-weight: 400;
+}
