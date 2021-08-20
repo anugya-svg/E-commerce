@@ -1,3 +1,4 @@
+//jshint esversion: 9
 import "./App.css";
 import ProductPage from "./pages/ProductPage";
 import ProductsList from "./pages/ProductList";

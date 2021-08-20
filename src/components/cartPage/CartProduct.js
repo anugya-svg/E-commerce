@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import styles from "../../pages/Cart.module.css"
-import { useDispatch,useSelector } from 'react-redux';
+import CurrencyFormat from "react-currency-format";
+import { useDispatch, useSelector } from 'react-redux';
+
 import { adjustQuantity } from './../../redux/cart/CartActions';
 function CartProduct({ product }) {
     const cart = useSelector(state => state.cart)
@@ -40,9 +42,16 @@ function CartProduct({ product }) {
                         
                     </div>
                 </td>
-                <td className="p-4">{parseInt(product.price)*product.qty}</td>
+                <td className="p-4">
+                    <CurrencyFormat
+                        value={parseInt(product.price) * product.qty}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'₹'}
+                        renderText={value => <strong>{value}</strong>}
+                        />
+                </td>
             </tr>
-        
     )
     }
     else{
