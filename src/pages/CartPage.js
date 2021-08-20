@@ -1,12 +1,13 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import styles from "./Cart.module.css"
+import Subtotal from '../components/cartPage/Subtotal';
 function CartPage() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-8">
-                    <table className="table table-sm">
+                <div className="col-md-8 col-sm-12">
+                    <table className="table table-sm text-center">
                     <thead className={styles.border}>
                         <tr >
                         <th scope="col">Product</th>
@@ -30,7 +31,7 @@ function CartPage() {
                             <td className="p-4">
                                 <div className="d-flex">
                                 <span className={styles.qty}>+</span>
-                                <span className={styles.qty} style={{backgroundColor:"#f7f7f7"}}>1</span>
+                                <span className={styles.qty} style={{backgroundColor:"#e8e8e8"}}>1</span>
                                 <span className={styles.qty}>-</span>
                                 </div>
                             </td>
@@ -48,7 +49,7 @@ function CartPage() {
                             <td className="p-4">
                                 <div className="d-flex">
                                 <span className={styles.qty}>+</span>
-                                <span className={styles.qty} style={{backgroundColor:"#f7f7f7"}}>1</span>
+                                <span className={styles.qty} style={{backgroundColor:"#e8e8e8"}}>1</span>
                                 <span className={styles.qty}>-</span>
                                 </div>
                             </td>
@@ -57,7 +58,8 @@ function CartPage() {
                     </tbody>
                 </table>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4  col-sm-12">
+                    <Subtotal/>
 
             </div>
         </div>
