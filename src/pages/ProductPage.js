@@ -15,7 +15,7 @@ function ProductPage() {
             <div>
                 <h3>{product.title}</h3>
                 <h3>pr page</h3>
-                <img src={product.image} alt="not found" />
+                <img src={product.img[0]} alt="not found" />
                 <button onClick={() => dispatch(addCart(product))}>Add  to cart</button>
                 <button onClick={() => dispatch(removeCart(product.id))}>delete from cart</button>
             </div>

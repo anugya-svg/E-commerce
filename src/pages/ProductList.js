@@ -8,7 +8,6 @@ import ProductCard from '../components/productPage/ProductCard'
 
 const ProductsList = () => {
     const products = useSelector(state => state.products.products)
-    console.log(products)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchProducts())
@@ -20,7 +19,7 @@ const ProductsList = () => {
                 <div className="row">
                     {
                         products.map(product =>
-                            <ProductCard key={product.id} imgURL={product.image} id={product.id} />
+                            <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} />
                         )
                     }
                 </div>
