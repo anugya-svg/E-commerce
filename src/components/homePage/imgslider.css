@@ -1,0 +1,26 @@
+.image-slider .slider-content {
+    height: 500px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff !important;
+    background-color: rgb(219, 219, 219) !important;
+    padding: 2rem 1rem;
+}
+.swiper-button-next {
+    margin-right: 0px !important;
+}
+.swiper-button-prev {
+    margin-left: 0px !important;
+}
+.slider-nav-buttons {
+    z-index: 100;
+    margin-top: -5%;
+}
+.slider-nav-buttons > div {
+    font-size: 50px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(202, 201, 201);
+    padding: 1.5rem 0.2rem;
+}
