@@ -36,6 +36,7 @@
 .category-banner-home .each-section .shopnow-button {
     color: #cebd9c;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 .category-banner-home .each-section:hover .shopnow-button {
     animation: showShopButton 0.5s ease forwards;
@@ -48,8 +49,7 @@
 
 @keyframes showShopButton {
     0% {
-        letter-spacing: 0px;
-        display: none;
+        letter-spacing: 1px;
     }
     100% {
         display: block;

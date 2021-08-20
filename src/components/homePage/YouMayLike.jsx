@@ -1,16 +1,13 @@
 //jshint esversion: 9
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper/core";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../productPage/ProductCard";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import { fetchProducts } from "./../../redux/products/ProductsActions";
 
-SwiperCore.use([Pagination]);
-
-function TrendingSection() {
+function YouMayLike() {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
 
@@ -35,7 +32,7 @@ function TrendingSection() {
 
     return (
         <div className="trending-section my-5">
-            <div className="fw-bold fs-2 pt-2 ls-1">Trending Now</div>
+            <div className="fw-bold text-center fs-2 pt-2 ls-1">You May Also Like</div>
             <div>
                 <Swiper
                     slidesPerView={changeSlideCount()}
@@ -62,4 +59,4 @@ function TrendingSection() {
     );
 }
 
-export default TrendingSection;
+export default YouMayLike;
