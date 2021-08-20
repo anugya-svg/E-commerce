@@ -3,11 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { productClicked } from "../redux";
-import Navbar from "../components/navbar_footer/navbar"
-import Footer from "../components/navbar_footer/footer"
 import { fetchProducts } from "../redux/products/ProductsActions";
 import ProductCard from "../components/productPage/ProductCard";
-import "../components/navbar_footer/nav.css"
+import "../components/navbar_footer/nav.css";
 const ProductsList = () => {
     const products = useSelector((state) => state.products.products);
     const dispatch = useDispatch();
@@ -18,18 +16,15 @@ const ProductsList = () => {
     const Part = () => {
         return (
             <div>
-                 <Navbar/>
-            <div className="container">
-               
-                <div className="row">
-                    {products.map((product) => (
-                        <div className="col-12 col-sm-3 p-sm-4 mt-4">
-                            <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} />
-                        </div>
-                    ))}
+                <div className="container">
+                    <div className="row">
+                        {products.map((product) => (
+                            <div className="col-12 col-sm-3 p-sm-4 mt-4">
+                                <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-                        <Footer/>
             </div>
         );
     };
