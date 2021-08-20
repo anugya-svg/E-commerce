@@ -2,7 +2,8 @@ import CurrencyFormat from "react-currency-format";
 
 import React from 'react'
 
-function useCurrency({value}) {
+const UseCurrency=({value}) =>{
+    console.log(value)
     return (
         <CurrencyFormat
             value={value}
@@ -14,4 +15,4 @@ function useCurrency({value}) {
     )
 }
 
-export { useCurrency}
+export default  UseCurrency

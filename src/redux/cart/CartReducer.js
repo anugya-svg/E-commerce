@@ -33,8 +33,8 @@ const CartReducer = (state = cart, action)=>{
             localStorage.setItem('cart',JSON.stringify(cart))
             return cart
         case ADJ_QTY:
-                console.log(action)
-                const new_cart = state.map((item) => item.id === action.payload.id ? ({ ...item, qty: item.qty + action.payload.qty }) : (item))
+                const st=JSON.parse(localStorage.getItem('cart'))
+                const new_cart = st.map((item) => item.id === action.payload.id ? ({ ...item, qty: item.qty + action.payload.qty }) : (item))
                 console.log(new_cart)
                 localStorage.setItem('cart', JSON.stringify(new_cart))
                 return new_cart

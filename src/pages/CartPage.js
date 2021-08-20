@@ -8,9 +8,8 @@ function CartPage() {
     const cart = JSON.parse(localStorage.getItem('cart'))
     const state = useSelector(state => state.cart)
     
-     
     return (
-        <div className="container">
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-md-8 col-sm-12">
                     <table className="table table-sm text-center">
@@ -25,8 +24,6 @@ function CartPage() {
                     </thead>
                         <tbody>
                             {
-
-                                
                                 cart.map((product) => (
                                     <CartProduct product={product} key={product.id}/>
                                 ))
@@ -53,13 +50,12 @@ function CartPage() {
                         </tr> */}
                     </tbody>
                 </table>
-            </div>
-            <div className="col-md-4  col-sm-12">
+                </div>
+                <div className="col-md-4  col-sm-12">
                     <Subtotal/>
-
+                </div>
             </div>
         </div>
-    </div>
     )
 }
 

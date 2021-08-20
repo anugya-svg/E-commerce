@@ -2,9 +2,13 @@ import React,{useState} from 'react'
 import styles from "../../pages/Cart.module.css"
 import CurrencyFormat from "react-currency-format";
 import { useDispatch, useSelector } from 'react-redux';
-
-import { adjustQuantity } from './../../redux/cart/CartActions';
+import UseCurrency from "../../util/useCurrency"
+import { removeCart } from '../../redux'
+import { adjustQuantity } from '../../redux';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import Button from '@material-ui/core/Button';
 function CartProduct({ product }) {
+    
     const cart = useSelector(state => state.cart)
     const dispatch = useDispatch()
     // const [counter, setcounter] = useState(initialState)
@@ -18,6 +22,7 @@ function CartProduct({ product }) {
         qty:-1
     }
     const callPlus = () => {
+        // console.log('plus ran')
         dispatch(adjustQuantity(plus))
     }
     const callMinus = () => {
@@ -27,13 +32,23 @@ function CartProduct({ product }) {
         return (            
             <tr className={styles.border}>
                 <th scope="row" className="p-4">
-                    <img className={styles.img_cart} src={product.img[0]} alt="" />                                                                    
+                    <img className={styles.img_cart} src={product.img[0]} alt="" />
+                    <Button onClick={() => dispatch(removeCart(product.id))} size="medium" variant="outlined" color="secondary" >
+                        Remove
+                    </Button>
                 </th>
                 <td className="p-4">
                     <h6>{product.brand}</h6>
                     <p>{product.name}</p>
                 </td>
-                <td className="p-4">{product.price}</td>
+                <td className="p-4">
+                    <CurrencyFormat
+                        value={product.price}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'₹'}
+                        renderText={value => <div>{value}</div>}
+                    /></td>
                 <td className="p-4">
                     <div className="d-flex">
                         <span className={`${styles.qty} `} onClick={() => { callPlus() }}>+</span>
@@ -43,13 +58,8 @@ function CartProduct({ product }) {
                     </div>
                 </td>
                 <td className="p-4">
-                    <CurrencyFormat
-                        value={parseInt(product.price) * product.qty}
-                        displayType={'text'}
-                        thousandSeparator={true}
-                        prefix={'₹'}
-                        renderText={value => <strong>{value}</strong>}
-                        />
+
+                    <UseCurrency value={parseInt(product.price) * product.qty}/>
                 </td>
             </tr>
     )
