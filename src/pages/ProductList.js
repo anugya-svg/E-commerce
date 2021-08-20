@@ -1,11 +1,7 @@
 //jshint esversion: 9
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-<<<<<<< HEAD
-
-=======
 import { productClicked } from "../redux";
->>>>>>> 2a9eac0db1081c3877170517245d2dbbc11c8f04
 import { fetchProducts } from "../redux/products/ProductsActions";
 import ProductCard from "../components/productPage/ProductCard";
 import "../components/navbar_footer/nav.css";
