@@ -1,11 +1,25 @@
 //jshint esversion: 9
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
+import SwiperCore, { Pagination } from "swiper/core";
+import { useDispatch, useSelector } from "react-redux";
+import ProductCard from "../productPage/ProductCard";
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import { fetchProducts } from "./../../redux/products/ProductsActions";
+
+SwiperCore.use([Pagination]);
 
 function TrendingSection() {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
+
+    const products = useSelector((state) => state.products.products);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, []);
 
     function changeSlideCount() {
         if (window.innerWidth <= 576) {
@@ -20,7 +34,8 @@ function TrendingSection() {
     }
 
     return (
-        <div className="trending-section">
+        <div className="trending-section my-5">
+            <div className="fw-bolder fs-3 py-3 ls-1">Trending Section</div>
             <div>
                 <Swiper
                     slidesPerView={changeSlideCount()}
@@ -36,11 +51,11 @@ function TrendingSection() {
                     loop={true}
                     className="mySwiper"
                 >
-                    <SwiperSlide>
-                        <div className="">
-                            <img src={ } alt="tempImage" width="100%" />
-                        </div>
-                    </SwiperSlide>
+                    {products.map((product) => (
+                        <SwiperSlide>
+                            <ProductCard key={product.id} imgURL={product.image} id={product.id} />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
         </div>

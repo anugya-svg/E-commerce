@@ -7,7 +7,9 @@ function Home() {
     return (
         <div className="homepage">
             <ImageSlider />
-            <TrendingSection />
+            <div className="container">
+                <TrendingSection />
+            </div>
         </div>
     );
 }
