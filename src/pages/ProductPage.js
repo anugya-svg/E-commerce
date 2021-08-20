@@ -5,6 +5,7 @@ import { fetchProduct } from '../redux'
 import { addCart } from '../redux/cart/CartActions'
 import { removeCart } from '../redux/cart/CartActions'
 
+import { Link } from 'react-router-dom';
 function ProductPage() {
     const { id } = useParams()
     const dispatch = useDispatch()
@@ -18,6 +19,7 @@ function ProductPage() {
                 <img src={product.img[0]} alt="not found" />
                 <button onClick={() => dispatch(addCart(product))}>Add  to cart</button>
                 <button onClick={() => dispatch(removeCart(product.id))}>delete from cart</button>
+                <Link to="/cart">Go to cart</Link>
             </div>
         )
     }
