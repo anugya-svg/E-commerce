@@ -30,7 +30,7 @@ function CartPage() {
                                 
                         }
 
-                        {/* <tr className={styles.border}>
+                        <tr className={styles.border}>
                             <th scope="row" className="p-4">
                                     <img className={styles.img_cart} src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11166294/2020/3/24/c099ba46-0d43-4684-a909-e8dc5709bb321585041823906-Levis-Men-Shirts-2061585041821702-1.jpg" alt="" />                                                                    
                             </th>
@@ -47,7 +47,7 @@ function CartPage() {
                                 </div>
                             </td>
                             <td className="p-4">$360</td>
-                        </tr> */}
+                        </tr>
                     </tbody>
                 </table>
                 </div>

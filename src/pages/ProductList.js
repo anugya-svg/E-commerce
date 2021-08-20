@@ -1,7 +1,9 @@
 //jshint esversion: 9
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
+import {Link} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { productClicked } from "../redux";
+
 import { fetchProducts } from "../redux/products/ProductsActions";
 import ProductCard from "../components/productPage/ProductCard";
 import "../components/navbar_footer/nav.css";
