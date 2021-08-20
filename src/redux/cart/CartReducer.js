@@ -1,6 +1,6 @@
 import { ADD_CART } from "./CartTypes";
 import { REMOVE_CART } from "./CartTypes";
-
+import { ADJ_QTY } from "./CartTypes";
 const cart = []
 
 const CartReducer = (state = cart, action)=>{
@@ -32,7 +32,12 @@ const CartReducer = (state = cart, action)=>{
             const cart = state.filter((product) => action.payload !== product.id)
             localStorage.setItem('cart',JSON.stringify(cart))
             return cart
-            
+        case ADJ_QTY:
+                console.log(action)
+                const new_cart = state.map((item) => item.id === action.payload.id ? ({ ...item, qty: item.qty + action.payload.qty }) : (item))
+                console.log(new_cart)
+                localStorage.setItem('cart', JSON.stringify(new_cart))
+                return new_cart
         default:
             return state
     }

@@ -1,7 +1,16 @@
 import React from 'react'
 import styles from "./subtotal.module.css"
 import Divider from '@material-ui/core/Divider';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 function Subtotal() {
+    const cartState = useSelector(state => state.cart)
+    const cart=JSON.parse(localStorage.getItem('cart'))    
+    const prize = cart.map(item => item.price * item.qty)
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    const total = prize.reduce(reducer)
+    console.log(total)
     return (
         <div className={styles.subtotal}>
             <div className="row ">
@@ -17,7 +26,7 @@ function Subtotal() {
                 <div className="d-flex justify-content-between ">
 
                 <p> Amount</p>
-                <p>$ 566</p>
+                    <p>{total}</p>
                 </div>
             </div>
             <div className="row mb-3">
