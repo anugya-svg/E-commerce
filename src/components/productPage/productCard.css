@@ -4,7 +4,7 @@
 
 .product-container {
     margin: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-align: center;
 }
 
@@ -18,7 +18,7 @@
     height: 350px;
     object-fit: contain;
     cursor: pointer;
-    transition: transform .4s;
+    transition: transform 0.4s;
 }
 
 .product-container img:hover {
@@ -41,7 +41,7 @@
 }
 
 .product-container:hover .name {
-    color: #FF2020;
+    color: #ff2020;
 }
 
 .product-container .product-price {
@@ -82,7 +82,7 @@
     opacity: 100;
 }
 
-.product-tray>i {
+.product-tray > i {
     font-size: 1.5rem;
     display: inline-block;
     width: 33.33%;
@@ -92,7 +92,7 @@
     color: black;
 }
 
-.product-tray>i:hover {
-    background-color: #FF2020;
+.product-tray > i:hover {
+    background-color: #ff2020;
     color: white;
 }
