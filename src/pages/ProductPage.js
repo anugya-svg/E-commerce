@@ -1,26 +1,32 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router'
+import { fetchProduct } from '../redux'
 import { addCart } from '../redux/cart/CartActions'
-import {removeCart} from '../redux/cart/CartActions'
+import { removeCart } from '../redux/cart/CartActions'
+
 function ProductPage() {
-    const product = JSON.parse(localStorage.getItem('product'))
+    const { id } = useParams()
     const dispatch = useDispatch()
-    if(product)
-    return (
-        <div>
-            <h3>{product.title}</h3>
-            <h3>pr page</h3>
-            <img src={product.image} alt="not found" />
-            
-            <button onClick={() =>dispatch(addCart(product))}>Add  to cart</button>
-            <button onClick={() =>dispatch(removeCart(product.id))}>delete from cart</button>
-            
-        </div>
-        )
-    else
+    let product = useSelector(state => state.product)
+    if (product && product[id]) {
+        product = product[id]
         return (
-            <div>nulll hai abi to</div>
+            <div>
+                <h3>{product.title}</h3>
+                <h3>pr page</h3>
+                <img src={product.image} alt="not found" />
+                <button onClick={() => dispatch(addCart(product))}>Add  to cart</button>
+                <button onClick={() => dispatch(removeCart(product.id))}>delete from cart</button>
+            </div>
         )
+    }
+    else {
+        dispatch(fetchProduct(id))
+        return (
+            <h1>LOADING......</h1>
+        )
+    }
 }
 
 export default ProductPage

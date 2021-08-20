@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { productClicked } from "../redux";
 
 import { fetchProducts } from "../redux/products/ProductsActions";
+import ProductCard from "../components/productPage/ProductCard";
 
 const ProductsList = () => {
     const products = useSelector((state) => state.products.products);
@@ -14,15 +15,16 @@ const ProductsList = () => {
         dispatch(fetchProducts());
     }, []);
 
-    // const state = useSelector(state => state.)
     const Part = () => {
-        return products.map((product) => (
-            <div key={product.id}>
-                <Link to={`${product.id}`}>
-                    <p onClick={() => dispatch(productClicked(product))}> {product.title}</p>
-                </Link>
+        return (
+            <div className="container">
+                <div className="row">
+                    {products.map((product) => (
+                        <ProductCard key={product.id} imgURL={product.image} id={product.id} />
+                    ))}
+                </div>
             </div>
-        ));
+        );
     };
 
     if (products) return <Part />;
