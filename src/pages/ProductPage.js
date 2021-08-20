@@ -14,6 +14,7 @@ import '../components/ProductCard/productPage.css'
 import {useState} from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+import { Link } from 'react-router-dom';
 function ProductPage() {
     const [imageNumber, setImageNumber] = useState(0);
     const { id } = useParams()
@@ -96,6 +97,8 @@ function ProductPage() {
         {/* <Footer/> */}
         </>   
                 
+                
+                <Link to="/cart">Go to cart</Link>
             </div>
         )
     }
