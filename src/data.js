@@ -221,6 +221,28 @@ const data = [
         name: "X-Ray-Game-Unisex-Shoes",
         brand: "Puma"
     },
+    {
+        id: 22,
+        count: 2,
+        img: ["https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10769098/2019/10/17/4e8dc285-fce6-4d57-b058-d79d2132eb271571294516344-NOISE-Black-ColorFit-Pro-2-Active-Smartwatch-324157129451526-1.jpg", "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10769098/2019/10/17/07f18399-5aa8-45a6-b9b4-14811ca725241571294516228-NOISE-Black-ColorFit-Pro-2-Active-Smartwatch-324157129451526-2.jpg"],
+        price: 12000,
+        details: "The brilliant 1.3 colour display is now full capacitive touch, supporting taps and swipes, so it is easy to read and operate.",
+        rating: 4.5,
+        name: "Jet Black ColorFit Pro 2 Smartwatch",
+        brand: "Noise"
+    },
+    {
+        id: 23,
+        count: 3,
+        img: ["https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/7546900/2019/1/24/c9be0d6e-30a4-4242-b4e0-1c166b73f2781548320874402-HERENOW-Men-Polo-Collar-T-shirt-4861548320873235-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/7546900/2019/1/24/4ff84b3f-96cc-4e3c-84e2-b6d5d13e06451548320874372-HERENOW-Men-Polo-Collar-T-shirt-4861548320873235-3.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/7546900/2019/1/24/e8fca578-9400-4658-8a80-a932e52d4b151548320874353-HERENOW-Men-Polo-Collar-T-shirt-4861548320873235-4.jpg"],
+        price: 1800,
+        details: "Navy blue solid T-shirt, has a polo collar, short sleeve.100% cotton Machine-wash Polo Collar",
+        rating: 4.5,
+        name: "Men Navy Polo Collar T-shirt",
+        brand: "HERE&NOW"
+    },
 
 
 

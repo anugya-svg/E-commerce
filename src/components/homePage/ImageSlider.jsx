@@ -2,7 +2,7 @@
 import React from "react";
 import tempBack from "./../../assets/tempBack.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./imgslider.css";
+import "./homepage.css";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
