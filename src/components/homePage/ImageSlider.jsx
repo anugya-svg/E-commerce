@@ -1,6 +1,8 @@
 //jshint esversion: 9
 import React from "react";
 import tempBack from "./../../assets/tempBack.jpeg";
+import manImg from "./../../assets/person.png";
+import womenImg from "./../../assets/women.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./homepage.css";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
@@ -29,26 +31,74 @@ function ImageSlider() {
                         nextEl: ".slider-nav-buttons .slider-next",
                     }}
                     mousewheel={false}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
+                    // autoplay={{
+                    //     delay: 2500,
+                    //     disableOnInteraction: false,
+                    // }}
                     loop={true}
-                    className="mySwiper "
+                    className="mySwiper"
                 >
-                    <SwiperSlide>
-                        <div className="slider-content">
-                            <img src={tempBack} width="100%" height="100%" alt="temp head" />
+                    <SwiperSlide className="each-slider">
+                        <div
+                            className="slider-content pt-4"
+                            style={{
+                                background:
+                                    "linear-gradient(0deg, rgba(95,158,160,0.2945553221288515) 0%, rgba(255,255,255,1) 100%)",
+                            }}
+                        >
+                            <div className="row h-100">
+                                <div className="col-6 h-100">
+                                    <div className="w-100 h-100 overflow-hidden d-flex justify-content-center">
+                                        <img className="img-fluid" src={manImg} height="100%" alt="person" />
+                                    </div>
+                                </div>
+                                <div className="col-6">
+                                    <div className="d-flex align-items-center flex-wrap w-100 h-100">
+                                        <div>
+                                            <div className="main-slider-text pb-4">
+                                                Only the Best,
+                                                <br /> For the Best
+                                            </div>
+                                            <div className="text-center py-3">
+                                                <button className="btn btn-primary bg-main-button fs-6 py-3 px-5 ls-1">
+                                                    SHOP NOW
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slider-content">
-                            <img src={tempBack} width="100%" height="100%" alt="temp head" />
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slider-content">
-                            <img src={tempBack} width="100%" height="100%" alt="temp head" />
+                    <SwiperSlide className="each-slider">
+                        <div
+                            className="slider-content pt-4"
+                            style={{
+                                background: "linear-gradient(0deg, rgba(245,238,238,1) 0%, rgba(255,255,255,1) 100%)",
+                            }}
+                        >
+                            <div className="row h-100">
+                                <div className="col-6 h-100">
+                                    <div className="d-flex justify-content-end align-items-center flex-wrap w-100 h-100">
+                                        <div>
+                                            <div className="main-slider-text pb-4">
+                                                Only the Best,
+                                                <br /> For the Best
+                                            </div>
+                                            <div className="text-center py-3">
+                                                <button className="btn btn-primary bg-main-button fs-6 py-3 px-5 ls-1">
+                                                    SHOP NOW
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-6 overflow-hidden">
+                                    <div className="w-100 d-flex justify-content-center">
+                                        <img className="img-fluid" src={womenImg} alt="person" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </SwiperSlide>
                     <div className="slider-nav-buttons position-absolute w-100 top-50 d-flex justify-content-between">
