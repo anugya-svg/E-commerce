@@ -34,6 +34,7 @@ function CartPage() {
                 </div>
                 <div className="col ">
                     <Subtotal/>
+                    <Button />
                 </div>
             </div>
         </div>
