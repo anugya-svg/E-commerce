@@ -1,8 +1,8 @@
-body{
+/* .body{
     display:flex;
     height:100vh;
     overflow: scroll;
-  }
+  }  */
   .left,.right{
     padding:40px;
   }
@@ -62,14 +62,22 @@ body{
   }
   .main_img{
       border-radius: 10px;
-      width:350px;
+      width:25vmax;
+      height:25vmax;
+      transition: all 0.5s ease;
+      z-index:-1;
   }
   .more_img{
-      width:7vw;
-      height:7vw;
-      padding: auto;
-      margin:10px 30px 10px 60px;
+      
+      width:6vmax;
+      height:6vmax;
+      z-index: 1;
+      float:right;
+      margin-top:10px;
+      border-radius:5px;
+      border:1px solid rgb(187, 187, 187);
   }
+  
   .size{
       width:4vmin!important;
       height:4vmin!important;
@@ -82,17 +90,27 @@ body{
   .icon{
       margin:5px;
   }
-  .left{
-    display:flex;
-    justify-content: center;
-    height:60vh;
-    padding-left:40px;
-  }
   
-  /* .right{
-    margin:10px;
+  .right{
+    margin:15px 10px!important;
     padding:5px;
-  }  */
-  .card_image{
+  } 
+   .card_image{
     width:300px!important;
+  } 
+  .but{
+    color:white!important;
+    background: #FF2020!important;
+    margin:10px;
+    border-radius: 10px;
+    font-weight: bolder;
+  }
+  .image_div{
+    display: flex;
+    flex-direction: column;
+    float:right;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /* padding-left:2vw!important; */
   }

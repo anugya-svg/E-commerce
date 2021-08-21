@@ -10,25 +10,26 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import StarIcon from '@material-ui/icons/Star';
 import ThumbsUpDownIcon from '@material-ui/icons/ThumbsUpDown';
 import Comments from '../components/ProductCard/comments';
-import '../components/ProductCard/productPage.css'
 import {useState} from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
+import '../components/ProductCard/productPage.css'
 
 import { Link } from 'react-router-dom';
+import { scryRenderedDOMComponentsWithClass } from 'react-dom/cjs/react-dom-test-utils.production.min'
 function ProductPage() {
     const [imageNumber, setImageNumber] = useState(0);
     const { id } = useParams()
     const dispatch = useDispatch()
+    var x=5*(Math.floor(Math.random() * 6) + 1);
+    var y=(Math.floor(Math.random() * 10) + 1);
     let product = useSelector(state => state.product)
     if (product && product[id]) {
         product = product[id]
         return (
-            <div>
-                <>
-        {/* <Navbar/> */}
+            
         <div className="conatiner">
             <div className="row">
-                <div className="col-md-2">
+                <div className="col-2 image_div">
 
                     {
                         product.img.map((image,index)=>{
@@ -37,21 +38,23 @@ function ProductPage() {
                     }
                 
                 </div>
-                <div className="col-md-4 left" >
-               {/* <CardImage url={product.img[imageNumber]} className="card_image"/> */}
+                <div className="col-4 left" >
+              
                 <img src={product.img[imageNumber]} className="main_img" alt="not found" />
-                   
+                
+                
                 </div>
                 <div className="col-md-5 right" >
-                    <h3>{product.name}</h3>
+                    <h3 style={{fontWeight:"bolder"}}>{product.name}</h3>
                     <h4>{product.detail}</h4>
                     <div className="span">{product.rating} <StarIcon  style={{ color:"orange" }} className="stars"/>  | 6,000 Ratings</div>
                     <hr/>
-                    <h3>{product.price}</h3>
-                    <span>Actual price </span>
-                    <span>discount</span>
-                    <p>inclusive of all taxes</p>
-                    <p>FREE delivery: Tuesday, August 24</p>
+                    <h3 style={{fontWeight:"bolder"}}>Rs. {Math.floor((100-x)/100*product.price)}</h3>
+                    <span style={{textDecoration:"line-through",margin:"10px",fontSize:"3vmin"}}>Rs. {product.price} </span>
+                    <span style={{color:"#FF2020"}}>  {x}% off</span>
+                    <p style={{margin:"3px",fontFamily:"serif"}}>inclusive of all taxes</p>
+                    <p style={{color:"green",fontWeight:"bold",margin:"3px",fontFamily:"serif"}}>Hurry Up! Only {y} left!</p>
+                    <p style={{margin:"10px 2px"}}>FREE delivery:<b> Tuesday, August 24</b></p>
                     
                     <div className="col"></div>
                     <h5>Select size</h5>
@@ -64,8 +67,13 @@ function ProductPage() {
                         <span className="size">9</span>
                     </div>
                    <br/>
-                    <Button className="buy_now" style={{background:"orange"}} onClick={() => dispatch(addCart(product))}><LocalGroceryStoreIcon className="icon"/> Add  to cart</Button>
-                    <Button className="add_cart" style={{background:"orange"}} onClick={() => dispatch(removeCart(product.id))}><DeleteIcon className="icon"/>Delete from cart</Button>
+                   <h6 style={{fontWeight:"bolder",marginTop:"20px"}}>Product detail</h6>
+                   <p>{product.details}</p>
+                    <a ><Button className="but" onClick={() => dispatch(addCart(product))} size="medium" variant="outlined" style={{margin:"10px"}} ><LocalGroceryStoreIcon className="icon"/>Add To cart</Button></a>
+                    <Button onClick={() => dispatch(removeCart(product.id))} size="medium" variant="outlined" style={{border:"1px solid #FF2020",color:"#FF2020",margin:"10px",fontWeight:"bold"}} >
+                    <DeleteIcon className="icon"/>
+                        Remove from cart
+                    </Button>
                     <div>
   
                 </div>
@@ -94,12 +102,7 @@ function ProductPage() {
                 <div className="col-md-1"></div>
             </div>
         </div>
-        {/* <Footer/> */}
-        </>   
-                
-                
-                <Link to="/cart">Go to cart</Link>
-            </div>
+            
         )
     }
     else {
