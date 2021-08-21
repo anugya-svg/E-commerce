@@ -1,8 +1,8 @@
-body{
+/* body{
     display:flex;
     height:100vh;
     overflow: scroll;
-  }
+  } */
   .left,.right{
     padding:40px;
   }
@@ -89,10 +89,7 @@ body{
     padding-left:40px;
   }
   
-  /* .right{
-    margin:10px;
-    padding:5px;
-  }  */
   .card_image{
     width:300px!important;
-  }
+  } 
+
