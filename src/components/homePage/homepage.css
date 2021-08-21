@@ -1,5 +1,6 @@
 .image-slider .slider-content {
-    height: 500px;
+    height: 700px !important;
+    overflow: hidden;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -26,6 +27,10 @@
 }
 .color-white {
     color: #fff !important;
+}
+.main-slider-text {
+    font-size: 4rem;
+    font-weight: 900;
 }
 .category-banner-home .each-section > div:last-child {
     width: 100%;
@@ -67,10 +72,17 @@
 .fs-7 {
     font-size: 0.9rem !important;
 }
+.bg-main-button {
+    background-color: #292621 !important;
+    color: #fff;
+}
 .testimonials .slider-nav-buttons > div {
     background: transparent;
     color: #d8cfc3;
     /* font-weight: 900; */
+}
+.delivery-banner {
+    background: #f6f6f6;
 }
 
 @keyframes showShopButton {
@@ -82,3 +94,4 @@
         letter-spacing: 2px;
     }
 }
+/*  */

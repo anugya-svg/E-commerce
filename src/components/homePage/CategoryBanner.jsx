@@ -6,7 +6,7 @@ import womenFashion from "./../../assets/womenfashion.webp";
 
 function CategoryBanner() {
     return (
-        <div className="category-banner-home my-5 py-5">
+        <div className="category-banner-home my-5 pb-5">
             <div className="row">
                 <div className="offset-1 offset-md-0 col-10 col-md-4">
                     <div className="each-section position-relative m-2">
