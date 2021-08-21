@@ -32,7 +32,7 @@ function YouMayLike() {
 
     return (
         <div className="trending-section my-5">
-            <div className="fw-bold text-center fs-2 pt-2 ls-1">You May Also Like</div>
+            <div className="fw-bold text-center fs-2 pt-2 ls-1">You May Like</div>
             <div>
                 <Swiper
                     slidesPerView={changeSlideCount()}

@@ -46,6 +46,32 @@
     transition: all;
     transition-duration: 1s;
 }
+.testimonials {
+    background: #f3ead8;
+}
+.testimonials .slider-content {
+    height: 300px;
+}
+.testimonials .slider-content > div {
+    width: 600px !important;
+}
+.ls-1 {
+    letter-spacing: 1px !important;
+}
+.testimonials .user-designation {
+    color: #74706b;
+}
+.testimonials .testimonial-content {
+    font-weight: 600;
+}
+.fs-7 {
+    font-size: 0.9rem !important;
+}
+.testimonials .slider-nav-buttons > div {
+    background: transparent;
+    color: #d8cfc3;
+    /* font-weight: 900; */
+}
 
 @keyframes showShopButton {
     0% {
