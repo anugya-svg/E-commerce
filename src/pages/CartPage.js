@@ -26,9 +26,8 @@ function CartPage() {
                             {
                                 cart.map((product) => (
                                     <CartProduct product={product} key={product.id}/>
-                                ))
-                                
-                        }
+                                )) 
+                            }
                     </tbody>
                 </table>
                 </div>

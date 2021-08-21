@@ -13,6 +13,7 @@ import Comments from '../components/ProductCard/comments';
 import '../components/ProductCard/productPage.css'
 import {useState} from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
+import CurrencyFormat from 'react-currency-format'
 
 import { Link } from 'react-router-dom';
 function ProductPage() {
@@ -46,7 +47,15 @@ function ProductPage() {
                     <h3>{product.name}</h3>
                     <h4>{product.detail}</h4>
                     <div className="span">{product.rating} <StarIcon  style={{ color:"orange" }} className="stars"/>  | 6,000 Ratings</div>
-                    <hr/>
+                        <hr />
+                                
+                    <CurrencyFormat
+                        value={product.price}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'₹'}
+                        renderText={value => <h3>{value}</h3>}
+                    />
                     <h3>{product.price}</h3>
                     <span>Actual price </span>
                     <span>discount</span>
@@ -96,9 +105,6 @@ function ProductPage() {
         </div>
         {/* <Footer/> */}
         </>   
-                
-                
-                <Link to="/cart">Go to cart</Link>
             </div>
         )
     }
