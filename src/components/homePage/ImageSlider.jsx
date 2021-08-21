@@ -1,6 +1,5 @@
 //jshint esversion: 9
 import React from "react";
-import tempBack from "./../../assets/tempBack.jpeg";
 import manImg from "./../../assets/person.png";
 import womenImg from "./../../assets/women.png";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,7 +42,7 @@ function ImageSlider() {
                             className="slider-content pt-4"
                             style={{
                                 background:
-                                    "linear-gradient(0deg, rgba(95,158,160,0.2945553221288515) 0%, rgba(255,255,255,1) 100%)",
+                                    "linear-gradient(180deg, rgba(95,158,160,0.2945553221288515) 0%, rgba(255,255,255,1) 100%)",
                             }}
                         >
                             <div className="row h-100">
@@ -74,7 +73,7 @@ function ImageSlider() {
                         <div
                             className="slider-content pt-4"
                             style={{
-                                background: "linear-gradient(0deg, rgba(245,238,238,1) 0%, rgba(255,255,255,1) 100%)",
+                                background: "linear-gradient(180deg, rgba(245,238,238,1) 0%, rgba(255,255,255,1) 100%)",
                             }}
                         >
                             <div className="row h-100">
