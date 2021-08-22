@@ -1,4 +1,4 @@
-import { ADD_CART } from "./CartTypes";
+import { ADD_CART, TOTAL_ITEM } from "./CartTypes";
 import { REMOVE_CART } from "./CartTypes";
 import { ADJ_QTY } from "./CartTypes";
 const cart = []
@@ -38,6 +38,7 @@ const CartReducer = (state = cart, action)=>{
                 console.log(new_cart)
                 localStorage.setItem('cart', JSON.stringify(new_cart))
                 return new_cart
+        
         default:
             return state
     }

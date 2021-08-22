@@ -1,8 +1,11 @@
 import {Link} from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import { useSelector } from 'react-redux'
 const Navbar=()=>{
-return(
+    const len = useSelector((state)=>state.total)
+    
+    
+    return(
 
 <nav className="navbar navbar-expand-md navbar-light mt-1 pb-3 nav  shadow-sm">
     <div className="container">
@@ -34,7 +37,7 @@ return(
                 </li>
                 <li className="nav-item pe-4">
 
-                    <Link to="/cart" className="nav-link h4 color"><i class="bi bi-cart4"></i></Link>
+                    <Link to="/cart" className="nav-link h4 color"><i class="bi bi-cart4"></i><sup class="h5" style={{color:"#FF2020"}}>{len}</sup></Link>
                 </li>
                 <li className="nav-item pe-4">
                     <Link to="/cart" className="nav-link h3 color"><i class="bi bi-person"></i></Link>
