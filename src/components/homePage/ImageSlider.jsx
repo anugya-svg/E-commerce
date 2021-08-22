@@ -30,10 +30,10 @@ function ImageSlider() {
                         nextEl: ".slider-nav-buttons .slider-next",
                     }}
                     mousewheel={false}
-                    // autoplay={{
-                    //     delay: 2500,
-                    //     disableOnInteraction: false,
-                    // }}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
                     loop={true}
                     className="mySwiper"
                 >
@@ -41,8 +41,7 @@ function ImageSlider() {
                         <div
                             className="slider-content pt-4"
                             style={{
-                                background:
-                                    "linear-gradient(180deg, rgba(95,158,160,0.2945553221288515) 0%, rgba(255,255,255,1) 100%)",
+                                background: "linear-gradient(0deg, rgba(95,158,160,0.2945553221288515) 0%, rgb(0 0 0) 100%)",
                             }}
                         >
                             <div className="row h-100">
@@ -54,7 +53,7 @@ function ImageSlider() {
                                 <div className="col-6">
                                     <div className="d-flex align-items-center flex-wrap w-100 h-100">
                                         <div>
-                                            <div className="main-slider-text pb-4">
+                                            <div className="main-slider-text pb-4 color-white">
                                                 Only the Best,
                                                 <br /> For the Best
                                             </div>
