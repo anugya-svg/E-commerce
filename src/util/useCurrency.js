@@ -9,7 +9,7 @@ const UseCurrency=({value}) =>{
             value={value}
             displayType={'text'}
             thousandSeparator={true}
-            prefix={'₹'}
+            prefix={'Rs.'}
             renderText={value => <strong>{value}</strong>}
         />
     )
