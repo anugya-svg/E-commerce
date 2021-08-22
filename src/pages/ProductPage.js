@@ -13,7 +13,7 @@ import Comments from '../components/ProductCard/comments';
 import {useState} from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 import '../components/ProductCard/productPage.css'
-
+import { totalItem } from '../redux/total_item/total_action'
 import { Link } from 'react-router-dom';
 import { scryRenderedDOMComponentsWithClass } from 'react-dom/cjs/react-dom-test-utils.production.min'
 function ProductPage() {
@@ -69,8 +69,12 @@ function ProductPage() {
                    <br/>
                    <h6 style={{fontWeight:"bolder",marginTop:"20px"}}>Product detail</h6>
                    <p>{product.details}</p>
-                    <a ><Button className="but" onClick={() => dispatch(addCart(product))} size="medium" variant="outlined" style={{margin:"10px"}} ><LocalGroceryStoreIcon className="icon"/>Add To cart</Button></a>
-                    <Button onClick={() => dispatch(removeCart(product.id))} size="medium" variant="outlined" style={{border:"1px solid #FF2020",color:"#FF2020",margin:"10px",fontWeight:"bold"}} >
+                    <a ><Button className="but" onClick={() =>{ dispatch(addCart(product))
+                                                                dispatch(totalItem())
+                    }} size="medium" variant="outlined" style={{margin:"10px"}} ><LocalGroceryStoreIcon className="icon"/>Add To cart</Button></a>
+                    <Button onClick={() =>{ dispatch(removeCart(product.id))
+                                            dispatch(totalItem())
+                    }} size="medium" variant="outlined" style={{border:"1px solid #FF2020",color:"#FF2020",margin:"10px",fontWeight:"bold"}} >
                     <DeleteIcon className="icon"/>
                         Remove from cart
                     </Button>
