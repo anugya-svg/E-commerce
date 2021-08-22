@@ -35,7 +35,7 @@ function Subtotal() {
             value={total}
             displayType={'text'}
             thousandSeparator={true}
-            prefix={'₹'}
+            prefix={'Rs.'}
             renderText={value => <div>{value}</div>}
         /></p>
                     </div>

@@ -7,6 +7,8 @@ import { removeCart } from '../../redux'
 import { adjustQuantity } from '../../redux';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import Button from '@material-ui/core/Button';
+import { totalItem } from '../../redux/total_item/total_action'
+
 function CartProduct({ product }) {
     
     const cart = useSelector(state => state.cart)
@@ -33,7 +35,9 @@ function CartProduct({ product }) {
             <tr className={styles.border}>
                 <th scope="row" className="p-4">
                     <img className={styles.img_cart} src={product.img[0]} alt="" />
-                    <Button onClick={() => dispatch(removeCart(product.id))} size="medium" variant="outlined" color="secondary" >
+                    <Button onClick={() => {dispatch(removeCart(product.id))
+                                            dispatch(totalItem())
+                    }} size="medium" variant="outlined" color="secondary" >
                         Remove
                     </Button>
                 </th>

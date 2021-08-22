@@ -34,8 +34,8 @@ function CartPage() {
         </div>
     ) : (
         <div className="container mt-5">
-            <div className="row">
-                <div className="col ">
+            <div className="d-flex" >
+                <div className="me-3" style={{width:"75%"}}>
                     <table className="table table-sm text-center">
                         <thead className={styles.border}>
                             <tr>
@@ -55,7 +55,7 @@ function CartPage() {
                     </tbody>
                 </table>
                 </div>
-                <div className="col ">
+                <div className="" style={{width:"30%"}}>
                     <Subtotal />
                     <Button />
                 </div>
