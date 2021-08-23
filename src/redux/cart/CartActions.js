@@ -1,6 +1,7 @@
 import { ADD_CART } from "./CartTypes";
 import { REMOVE_CART } from "./CartTypes";
 import { ADJ_QTY } from "./CartTypes";
+import {CLEAR} from "./CartTypes"
 
 export const addCart = (product) => {
     
@@ -22,5 +23,10 @@ export const adjustQuantity = (prop) => {
     return {
         type: ADJ_QTY,
         payload:prop
+    }
+}
+export const clear=()=>{
+    return{
+        type:CLEAR
     }
 }

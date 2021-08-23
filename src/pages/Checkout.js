@@ -17,6 +17,10 @@ import AddressForm from "./../components/checkoutPage/AddressForm";
 import Billing from "../components/checkoutPage/Billing";
 import Completed from "./../components/checkoutPage/Completed";
 import { Link } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux";
+import {orderHistory} from "../redux/order_history/orderHistoryAction";
+import { totalItem } from '../redux/total_item/total_action'
+import {clear} from "../redux/cart/CartActions"
 const useQontoStepIconStyles = makeStyles({
   root: {
     color: "#eaeaf0",
@@ -189,7 +193,7 @@ export default function CustomizedSteppers() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-
+  const dispatch = useDispatch()
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -249,6 +253,25 @@ export default function CustomizedSteppers() {
               >
                 Back
               </Button>
+              {activeStep === steps.length - 1 ?(<Button
+                onClick={handleNext}
+                size="medium"
+                variant="filled"
+                style={{
+                  border: "1px solid #FF2020",
+                  color: "#FF2020",
+                  margin: "10px",
+                  fontWeight: "bold",
+                  
+                }}
+                onClick={()=>{dispatch(orderHistory())
+                  
+                dispatch(clear())
+                dispatch(totalItem())}}
+              >
+                Finish
+                
+              </Button>) : (
               <Button
                 onClick={handleNext}
                 size="medium"
@@ -258,10 +281,15 @@ export default function CustomizedSteppers() {
                   color: "#FF2020",
                   margin: "10px",
                   fontWeight: "bold",
+                  
                 }}
+                
               >
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button>
+                Next
+                
+              </Button>)}
+              
+                
             </div>
           </div>
         )}

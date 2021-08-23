@@ -6,6 +6,7 @@ import Cart from './cart';
 import Contact from "./contact"
 import "./nav.css"
 import Footer from "./footer"
+import History from "../../pages/order_history"
 const Main=()=>{
     
     return (
@@ -17,8 +18,8 @@ const Main=()=>{
                         <Route exact path='/'>
                             <Home/>
                         </Route>
-                        <Route exact path='/about'>
-                            <About/>
+                        <Route exact path='/history'>
+                            <History/>
                         </Route>
                         <Route exact path='/cart'>
                             <Cart/>

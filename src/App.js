@@ -4,7 +4,7 @@ import ProductPage from "./pages/ProductPage";
 import ProductsList from "./pages/ProductList";
 import CartPage from "./pages/CartPage";
 import Home from "./pages/Home";
-
+import OrderHistory from "./pages/order_history";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/navbar_footer/navbar";
@@ -36,6 +36,9 @@ function App() {
                 </Route>
                 <Route exact path="/checkout">
                     <Checkout />
+                </Route>
+                <Route exact path="/history">
+                    <OrderHistory />
                 </Route>
             </Switch>
             <Footer />
