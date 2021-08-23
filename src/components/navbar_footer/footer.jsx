@@ -1,4 +1,4 @@
-import './nav.css'
+import "./nav.css";
 
 const Footer = () => {
     return (
@@ -8,7 +8,7 @@ const Footer = () => {
                     <div class="col-11">
                         <div class="row ">
                             <div class="col-xl-8 col-md-4 col-sm-4 col-12 mx-auto a">
-                                <h3 class="text-muted mb-md-0 mb-5 bold-text">
+                                <h3 class="text-muted mb-md-0 mb-5">
                                     <i class="bi bi-shop"></i> <span className="random">E-Shop By Skyliners</span>{" "}
                                 </h3>
                             </div>
@@ -24,7 +24,7 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                                <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5">
+                                <h6 class="mb-3 mb-lg-4 text-muted mt-sm-0 mt-5">
                                     <b>ADDRESS</b>
                                 </h6>
                                 <p class="mb-1">605, RATAN ICON BUILDING</p>
@@ -33,7 +33,7 @@ const Footer = () => {
                         </div>
                         <div class="row ">
                             <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
-                                <p class="social text-muted mb-0 pb-0 bold-text">
+                                <p class="social mb-0 pb-0 text-muted">
                                     {" "}
                                     <span class="mx-2">
                                         <i class="bi bi-facebook"></i>
@@ -53,7 +53,7 @@ const Footer = () => {
                                 </small>
                             </div>
                             <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
-                                <h6 class="mt-55 mt-2 text-muted bold-text">
+                                <h6 class="mt-55 mt-2 text-muted">
                                     <b>Skyliners Team</b>
                                 </h6>
                                 <small>
@@ -65,7 +65,7 @@ const Footer = () => {
                                 </small>
                             </div>
                             <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
-                                <h6 class="text-muted bold-text">
+                                <h6 class="text-muted">
                                     <b>Co-ordinator</b>
                                 </h6>
                                 <small>
