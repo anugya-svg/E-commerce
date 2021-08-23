@@ -6,25 +6,23 @@ import { productClicked } from "../redux";
 
 import { fetchProducts } from "../redux/products/ProductsActions";
 import ProductCard from "../components/productPage/ProductCard";
-import "../components/navbar_footer/nav.css";
+
 const ProductsList = () => {
-    const products = useSelector((state) => state.products.products);
-    const dispatch = useDispatch();
+    const products = useSelector(state => state.products.products)
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchProducts());
     }, []);
 
     const Part = () => {
         return (
-            <div>
-                <div className="container">
-                    <div className="row">
-                        {products.map((product) => (
-                            <div className="col-12 col-sm-3 p-sm-4 mt-4">
-                                <ProductCard data={product} key={product.id} imgURL={product.img[0]} id={product.id} />
-                            </div>
-                        ))}
-                    </div>
+            <div className="container">
+                <div className="row">
+                    {products.map((product) => (
+                        <div className="col-12 col-sm-3 p-sm-4 mt-4">
+                            <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} name={product.name} price={product.price} />
+                        </div>
+                    ))}
                 </div>
             </div>
         );
