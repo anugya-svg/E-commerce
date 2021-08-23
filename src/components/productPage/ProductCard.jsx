@@ -9,7 +9,7 @@ const ProductCard = (props) => {
     const dispatch = useDispatch();
 
     // expected data can be changed
-    const { title, imgURL, description, price, id } = props;
+    const { name, imgURL, description, price, id } = props;
     return (
         // <div className="col-12 col-sm-3 p-sm-4 mt-4">
         <div className="product-container">
@@ -26,10 +26,10 @@ const ProductCard = (props) => {
                     </div>
                 </div>
                 <div className="product-name">
-                    <span className="name">Bag + Shirt</span>
+                    <span className="name">{name}</span>
                 </div>
                 <div className="product-price">
-                    <span className="discount-price">$ 280 </span>
+                    <span className="discount-price">$ {price} </span>
                     <span className="original-price">
                         <strike>$ 900</strike>
                     </span>
