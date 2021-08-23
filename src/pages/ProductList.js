@@ -1,6 +1,6 @@
 //jshint esversion: 9
-import React, { useEffect,useState } from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { productClicked } from "../redux";
 
@@ -21,7 +21,7 @@ const ProductsList = () => {
                     <div className="row">
                         {products.map((product) => (
                             <div className="col-12 col-sm-3 p-sm-4 mt-4">
-                                <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} />
+                                <ProductCard data={product} key={product.id} imgURL={product.img[0]} id={product.id} />
                             </div>
                         ))}
                     </div>
