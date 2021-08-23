@@ -41,7 +41,7 @@ function ImageSlider() {
                         <div
                             className="slider-content pt-4"
                             style={{
-                                background: "linear-gradient(0deg, rgba(95,158,160,0.2945553221288515) 0%, rgb(0 0 0) 100%)",
+                                background: "linear-gradient(0deg, rgba(95,158,160,0.945553221288515) 0%, #fff 100%)",
                             }}
                         >
                             <div className="row h-100">
@@ -53,7 +53,7 @@ function ImageSlider() {
                                 <div className="col-6">
                                     <div className="d-flex align-items-center flex-wrap w-100 h-100">
                                         <div>
-                                            <div className="main-slider-text pb-4 color-white">
+                                            <div className="main-slider-text pb-4">
                                                 Only the Best,
                                                 <br /> For the Best
                                             </div>
@@ -72,7 +72,7 @@ function ImageSlider() {
                         <div
                             className="slider-content pt-4"
                             style={{
-                                background: "linear-gradient(180deg, rgba(245,238,238,1) 0%, rgba(255,255,255,1) 100%)",
+                                background: "linear-gradient(0deg, rgba(255, 31, 32, 0.5) 0%, rgb(255, 255, 255) 100%)",
                             }}
                         >
                             <div className="row h-100">
