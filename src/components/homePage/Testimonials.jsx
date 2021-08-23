@@ -29,7 +29,7 @@ function Testimonials() {
                         <SwiperSlide>
                             <div className="slider-content d-flex">
                                 <div className="m-auto align-self-center">
-                                    <div className="testimonial-content fs-5 ls-1 text-center">
+                                    <div className="testimonial-content fs-5 text-center">
                                         Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt
                                         laboriosam volpyas iure, delectus dignissimos facilis neque nulla earum.
                                     </div>
@@ -50,7 +50,7 @@ function Testimonials() {
                         <SwiperSlide>
                             <div className="slider-content d-flex">
                                 <div className="m-auto align-self-center">
-                                    <div className="testimonial-content fs-5 ls-1 text-center">
+                                    <div className="testimonial-content fs-5 text-center">
                                         Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt
                                         laboriosam volpyas iure, delectus dignissimos facilis neque nulla earum.
                                     </div>
@@ -71,7 +71,7 @@ function Testimonials() {
                         <SwiperSlide>
                             <div className="slider-content d-flex">
                                 <div className="m-auto align-self-center">
-                                    <div className="testimonial-content fs-5 ls-1 text-center">
+                                    <div className="testimonial-content fs-5 text-center">
                                         Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt
                                         laboriosam volpyas iure, delectus dignissimos facilis neque nulla earum.
                                     </div>
@@ -92,7 +92,7 @@ function Testimonials() {
                         <SwiperSlide>
                             <div className="slider-content d-flex">
                                 <div className="m-auto align-self-center">
-                                    <div className="testimonial-content fs-5 ls-1 text-center">
+                                    <div className="testimonial-content fs-5 text-center">
                                         Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt
                                         laboriosam volpyas iure, delectus dignissimos facilis neque nulla earum.
                                     </div>
@@ -113,7 +113,7 @@ function Testimonials() {
                         <SwiperSlide>
                             <div className="slider-content d-flex">
                                 <div className="m-auto align-self-center">
-                                    <div className="testimonial-content fs-5 ls-1 text-center">
+                                    <div className="testimonial-content fs-5 text-center">
                                         Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt
                                         laboriosam volpyas iure, delectus dignissimos facilis neque nulla earum.
                                     </div>

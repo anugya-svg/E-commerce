@@ -10,14 +10,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/navbar_footer/navbar";
 import Footer from "./components/navbar_footer/footer";
-import Checkout from './pages/Checkout';
+import Checkout from "./pages/Checkout";
 import ScrollToTop from "./util/ScrollToTop";
-  import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import WishlistPage from "./pages/WishlistPage";
 
 function App() {
     return (
         <Router>
-            <ScrollToTop/>
+            <ScrollToTop />
             <Navbar />
             <Switch>
                 <Route exact path="/">
@@ -25,6 +26,9 @@ function App() {
                 </Route>
                 <Route exact path="/home">
                     <ProductsList />
+                </Route>
+                <Route exact path="/wishlist">
+                    <WishlistPage />
                 </Route>
                 <Route exact path="/product/:id">
                     <ProductPage />
