@@ -1,3 +1,5 @@
+import './nav.css'
+
 const Footer = () => {
     return (
         <div class="footer pb-0 mb-0 justify-content-center text-light ">
