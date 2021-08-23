@@ -3,7 +3,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import styles from "./Cart.module.css";
 import Subtotal from "../components/cartPage/Subtotal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartProduct from "../components/cartPage/CartProduct";
 import { Link } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ function CartPage() {
     const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
     console.log(cart.length);
     const state = useSelector((state) => state.cart);
+ 
 
     return cart.length === 0 ? (
         <div class="container mt-2">
@@ -61,7 +62,7 @@ function CartPage() {
                         <Subtotal />
                         <Link to="/checkout" style={{textDecoration:"none"}}>
 
-                        <Button size="medium" variant="contained" style={{backgroundColor:"#242B2E", border: "1px solid #242B2E", color: "#fff", margin: "10px", fontWeight: "bold" }}>
+                        <Button size="medium" variant="contained" style={{backgroundColor:"#242B2E", border: "1px solid #242B2E", color: "#fff", margin: "10px", fontWeight: "bold" }} >
                             Proceed to Checkout
                         </Button>
                         </Link>

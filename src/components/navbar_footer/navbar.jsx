@@ -25,23 +25,23 @@ const Navbar=()=>{
         <div className="collapse navbar-collapse justify-content-end align-center" id="main-nav">
             <ul className="navbar-nav">
                 <li className="nav-item pe-4" >
-                        <Link to="/" className="nav-link h4 color" >Home</Link>
+                        <Link to="/" className="nav-link h4 color" ><i class="bi bi-house-door"></i></Link>
                 </li>
                 <li className="nav-item pe-4" >
 
-                    <Link to="/Contact" className="nav-link h4 color">Contact</Link>
+                    <Link to="/history" className="nav-link h4 color"><i class="bi bi-clock-history"></i></Link>
                 </li>
-                <li className="nav-item pe-4" >
+                {/* <li className="nav-item pe-4" >
 
                     <Link to="/about" className="nav-link h4 color" ><i class="bi bi-heart"></i></Link>
-                </li>
+                </li> */}
                 <li className="nav-item pe-4">
 
                     <Link to="/cart" className="nav-link h4 color"><i class="bi bi-cart4"></i><sup class="h5" style={{color:"#FF2020"}}>{len}</sup></Link>
                 </li>
-                <li className="nav-item pe-4">
+                {/* <li className="nav-item pe-4">
                     <Link to="/cart" className="nav-link h3 color"><i class="bi bi-person"></i></Link>
-                </li>   
+                </li>    */}
                 
 
 
