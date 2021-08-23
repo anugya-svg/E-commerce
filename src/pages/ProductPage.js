@@ -31,7 +31,9 @@ function ProductPage() {
                 <div className="row">
                     <div className="col-2 image_div">
                         {product.img.map((image, index) => {
-                            return <img src={image} className="more_img" alt=" " onClick={() => setImageNumber(index)} />;
+                            return (
+                                <img src={image} key={index} className="more_img" alt=" " onClick={() => setImageNumber(index)} />
+                            );
                         })}
                     </div>
                     <div className="col-4 left">

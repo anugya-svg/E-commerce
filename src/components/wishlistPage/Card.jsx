@@ -1,6 +1,5 @@
 //jshint esversion: 9
 import React from "react";
-import tempProduct from "./../../assets/tempProduct.jfif";
 import CurrencyFormat from "react-currency-format";
 import Button from "@material-ui/core/Button";
 import { useDispatch } from "react-redux";
@@ -14,19 +13,19 @@ function Card(props) {
             <div className="row">
                 <div className="offset-2 col-2">
                     <div className="product-image p-4">
-                        <img className="img-fluid" src={tempProduct} alt="product" />
+                        <img className="img-fluid" src={props.data.img[0]} alt="product" />
                     </div>
                 </div>
                 <div className="col-2 d-flex justify-content-center align-items-center">
                     <div className="product-details">
-                        <h6>Product-name</h6>
-                        <p>Product name</p>
+                        <h6>{props.data.brand}</h6>
+                        <p>{props.data.name}</p>
                     </div>
                 </div>
                 <div className="col-1 d-flex align-items-center">
                     <div className="Price">
                         <CurrencyFormat
-                            value="5000"
+                            value={props.data.price}
                             displayType={"text"}
                             thousandSeparator={true}
                             prefix={"Rs."}
