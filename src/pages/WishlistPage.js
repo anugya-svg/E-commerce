@@ -12,11 +12,13 @@ function WishlistPage() {
             <div className="container">
                 <div className="page-head fs-4 pt-5 fw-bold">Wishlist</div>
                 <div className="wishlist-items px-5 mx-5 m-auto">
-                    {wishlistItems
-                        ? wishlistItems.map((item) => {
-                              return <Card data={item} key={item.id} />;
-                          })
-                        : ""}
+                    {wishlistItems && wishlistItems.length !== 0 ? (
+                        wishlistItems.map((item) => {
+                            return <Card data={item} key={item.id} />;
+                        })
+                    ) : (
+                        <div className="py-5">No. Items in Wishlist</div>
+                    )}
                 </div>
             </div>
         </div>
