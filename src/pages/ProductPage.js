@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router'
-import { fetchProduct } from '../redux'
-import { addCart } from '../redux/cart/CartActions'
-import { removeCart } from '../redux/cart/CartActions'
-import Button from '@material-ui/core/Button';
-import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
-import ProgressBar from 'react-bootstrap/ProgressBar'
-import StarIcon from '@material-ui/icons/Star';
-import ThumbsUpDownIcon from '@material-ui/icons/ThumbsUpDown';
-import Comments from '../components/ProductCard/comments';
-import {useState} from 'react';
-import DeleteIcon from '@material-ui/icons/Delete';
-import '../components/ProductCard/productPage.css'
-import { totalItem } from '../redux/total_item/total_action'
-import { Link } from 'react-router-dom';
-import { scryRenderedDOMComponentsWithClass } from 'react-dom/cjs/react-dom-test-utils.production.min'
-  import { ToastContainer, toast } from 'react-toastify';
-function ProductPage() {
-    const [imageNumber, setImageNumber] = useState(0);
-    const { id } = useParams()
-    const notify = () => {
-        console.log("I rnnnn")
-        toast("Wow so easy!")
-    };
-    const dispatch = useDispatch()
-    var x=5*(Math.floor(Math.random() * 6) + 1);
-    var y=(Math.floor(Math.random() * 10) + 1);
-    let product = useSelector(state => state.product)
-=======
 //jshint esversion: 9
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,7 +24,6 @@ function ProductPage() {
     var x = 5 * (Math.floor(Math.random() * 6) + 1);
     var y = Math.floor(Math.random() * 10) + 1;
     let product = useSelector((state) => state.product);
->>>>>>> a287e5d63a0b3dfeb7054da2f4a25b63d510d89f
     if (product && product[id]) {
         product = product[id];
         return (
