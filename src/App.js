@@ -6,15 +6,15 @@ import CartPage from "./pages/CartPage";
 import Home from "./pages/Home";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/navbar_footer/navbar";
 import Footer from "./components/navbar_footer/footer";
 import Checkout from './pages/Checkout';
 import ScrollToTop from "./util/ScrollToTop";
-
+  import { ToastContainer } from 'react-toastify';
 
 function App() {
-    
     return (
         <Router>
             <ScrollToTop/>
@@ -35,7 +35,19 @@ function App() {
                 <Route exact path="/checkout">
                     <Checkout />
                 </Route>
+
             </Switch>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={2002}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             <Footer />
         </Router>
     );

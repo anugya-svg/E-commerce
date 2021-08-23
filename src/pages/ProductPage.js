@@ -16,9 +16,14 @@ import '../components/ProductCard/productPage.css'
 import { totalItem } from '../redux/total_item/total_action'
 import { Link } from 'react-router-dom';
 import { scryRenderedDOMComponentsWithClass } from 'react-dom/cjs/react-dom-test-utils.production.min'
+  import { ToastContainer, toast } from 'react-toastify';
 function ProductPage() {
     const [imageNumber, setImageNumber] = useState(0);
     const { id } = useParams()
+    const notify = () => {
+        console.log("I rnnnn")
+        toast("Wow so easy!")
+    };
     const dispatch = useDispatch()
     var x=5*(Math.floor(Math.random() * 6) + 1);
     var y=(Math.floor(Math.random() * 10) + 1);
@@ -69,9 +74,11 @@ function ProductPage() {
                    <br/>
                    <h6 style={{fontWeight:"bolder",marginTop:"20px"}}>Product detail</h6>
                    <p>{product.details}</p>
-                    <a ><Button className="but" onClick={() =>{ dispatch(addCart(product))
+                        <Button className="but" onClick={() => {
+                            
+                             dispatch(addCart(product))
                                                                 dispatch(totalItem())
-                    }} size="medium" variant="outlined" style={{margin:"10px"}} ><LocalGroceryStoreIcon className="icon"/>Add To cart</Button></a>
+                    }} size="medium" variant="outlined" style={{margin:"10px"}} ><LocalGroceryStoreIcon className="icon"/>Add To cart</Button>
                     <Button onClick={() =>{ dispatch(removeCart(product.id))
                                             dispatch(totalItem())
                     }} size="medium" variant="outlined" style={{border:"1px solid #FF2020",color:"#FF2020",margin:"10px",fontWeight:"bold"}} >
