@@ -50,7 +50,7 @@ function YouMayLike() {
                 >
                     {products.map((product) => (
                         <SwiperSlide>
-                            <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} />
+                            <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} data={product}/>
                         </SwiperSlide>
                     ))}
                 </Swiper>
