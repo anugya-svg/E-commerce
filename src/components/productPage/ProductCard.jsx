@@ -1,8 +1,13 @@
+//jshint esversion: 9
 import { Link } from "react-router-dom";
 import "./productCard.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useDispatch } from "react-redux";
+import { addCart, addToWishlist ,fetchProduct} from "./../../redux";
 
 const ProductCard = (props) => {
+    const dispatch = useDispatch();
+
     // expected data can be changed
     const { title, imgURL, description, price, id } = props;
     return (
@@ -12,8 +17,11 @@ const ProductCard = (props) => {
                 <div className="product-img">
                     <img src={imgURL} alt="" />
                     <div className="product-tray">
-                        <i className="bi bi-heart"></i>
-                        <i className="bi bi-cart-check"></i>
+                        <i onClick={() => {    
+                            dispatch(addToWishlist(id));
+                            dispatch(fetchProduct(id));
+                        }} className="bi bi-heart"></i>
+                        <i onClick={() => dispatch(addCart(props.data)) } className="bi bi-cart-check"></i>
                         <i className="bi bi-zoom-in"></i>
                     </div>
                 </div>

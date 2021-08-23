@@ -53,7 +53,7 @@ function TrendingSection() {
                 >
                     {products.map((product) => (
                         <SwiperSlide>
-                            <ProductCard key={product.id} imgURL={product.img[0]} id={product.id} />
+                            <ProductCard key={product.id} data={product} imgURL={product.img[0]} id={product.id} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
