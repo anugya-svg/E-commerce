@@ -1,11 +1,8 @@
 import { ADD_CART } from "./CartTypes";
 import { REMOVE_CART } from "./CartTypes";
 import { ADJ_QTY } from "./CartTypes";
-<<<<<<< HEAD
-import { ToastContainer, toast } from 'react-toastify';
-=======
 import {CLEAR} from "./CartTypes"
->>>>>>> 185e4b5c3de937c974ae4cd21623f011edf0ec73
+import { ToastContainer, toast } from 'react-toastify';
 
 export const addCart = (product) => {
 
