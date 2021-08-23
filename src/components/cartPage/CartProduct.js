@@ -1,11 +1,10 @@
-import React,{useState} from 'react'
+import React from 'react'
 import styles from "../../pages/Cart.module.css"
 import CurrencyFormat from "react-currency-format";
 import { useDispatch, useSelector } from 'react-redux';
 import UseCurrency from "../../util/useCurrency"
 import { removeCart } from '../../redux'
 import { adjustQuantity } from '../../redux';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import Button from '@material-ui/core/Button';
 import { totalItem } from '../../redux/total_item/total_action'
 

@@ -6,11 +6,13 @@ import CartPage from "./pages/CartPage";
 import Home from "./pages/Home";
 import OrderHistory from "./pages/order_history";
 import "bootstrap/dist/css/bootstrap.min.css";
+ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/navbar_footer/navbar";
 import Footer from "./components/navbar_footer/footer";
 import Checkout from "./pages/Checkout";
 import ScrollToTop from "./util/ScrollToTop";
+import { ToastContainer } from 'react-toastify';
 import WishlistPage from "./pages/WishlistPage";
 
 function App() {
@@ -37,10 +39,22 @@ function App() {
                 <Route exact path="/checkout">
                     <Checkout />
                 </Route>
+
                 <Route exact path="/history">
                     <OrderHistory />
                 </Route>
             </Switch>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={2002}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             <Footer />
         </Router>
     );

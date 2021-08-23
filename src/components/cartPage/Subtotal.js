@@ -1,14 +1,12 @@
 import React from "react";
 import styles from "./subtotal.module.css";
-import Divider from "@material-ui/core/Divider";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import UseCurrency from "./../../util/useCurrency";
 import CurrencyFormat from "react-currency-format";
 function Subtotal() {
-  const cartState = useSelector((state) => state.cart);
+  const count = useSelector((state) => state.total);
   const cart = JSON.parse(localStorage.getItem("cart"));
-  if (cart.length) {
+  if (count) {
     const prize = cart.map((item) => item.price * item.qty);
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
@@ -23,7 +21,7 @@ function Subtotal() {
         <div className="row">
           <div className="d-flex justify-content-between ">
             <p>Items</p>
-            <p>{cart.length}</p>
+            <p>{count}</p>
           </div>
         </div>
         <div className="row ">
