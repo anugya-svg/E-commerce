@@ -4,7 +4,7 @@ import ProductPage from "./pages/ProductPage";
 import ProductsList from "./pages/ProductList";
 import CartPage from "./pages/CartPage";
 import Home from "./pages/Home";
-
+import OrderHistory from "./pages/order_history";
 import "bootstrap/dist/css/bootstrap.min.css";
  import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -40,6 +40,9 @@ function App() {
                     <Checkout />
                 </Route>
 
+                <Route exact path="/history">
+                    <OrderHistory />
+                </Route>
             </Switch>
                 <ToastContainer
                     position="top-right"
