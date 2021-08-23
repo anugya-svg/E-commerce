@@ -6,6 +6,7 @@ import ProductCard from "../productPage/ProductCard";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import { fetchProducts } from "./../../redux/products/ProductsActions";
+import { Link } from "react-router-dom";
 
 function YouMayLike() {
     const navigationPrevRef = React.useRef(null);
@@ -32,7 +33,14 @@ function YouMayLike() {
 
     return (
         <div className="trending-section my-5">
-            <div className="fw-bold text-center fs-2 pt-2 ls-1">You May Like</div>
+            <div className="fw-bold  fs-2 pt-2 ls-1">
+                You May Like
+                <Link to={`/viewall`}>
+                <div className="view_all" style={{color:"#FF2020"}}>
+                    View all
+                </div>
+                </Link>
+                </div>
             <div>
                 <Swiper
                     slidesPerView={changeSlideCount()}

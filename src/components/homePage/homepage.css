@@ -29,8 +29,9 @@
     color: #fff !important;
 }
 .main-slider-text {
-    font-size: 4rem;
+    font-size: 10vmin;
     font-weight: 900;
+    margin:0px 20px;
 }
 .category-banner-home .each-section > div:last-child {
     width: 100%;
@@ -93,5 +94,10 @@
         display: block;
         letter-spacing: 2px;
     }
+}
+.view_all{
+    display: inline-flex;
+    float:right;
+    font-size:3vmin;
 }
 /*  */

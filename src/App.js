@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import ScrollToTop from "./util/ScrollToTop";
 import { ToastContainer } from 'react-toastify';
 import WishlistPage from "./pages/WishlistPage";
+import ViewAll from "./pages/ViewAll";
 
 function App() {
     return (
@@ -42,6 +43,9 @@ function App() {
 
                 <Route exact path="/history">
                     <OrderHistory />
+                </Route>
+                <Route exact path="/viewall">
+                    <ViewAll/>
                 </Route>
             </Switch>
                 <ToastContainer

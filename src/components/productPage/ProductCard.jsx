@@ -41,9 +41,9 @@ const ProductCard = (props) => {
                     <span className="name">{name}</span>
                 </div>
                 <div className="product-price">
-                    <span className="discount-price">$ {price} </span>
+                    <span className="discount-price">Rs. {price} </span>
                     <span className="original-price">
-                        <strike>$ 900</strike>
+                        {/* <strike>$ 900</strike> */}
                     </span>
                 </div>
             </Link>

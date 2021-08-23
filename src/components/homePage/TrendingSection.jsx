@@ -7,6 +7,7 @@ import ProductCard from "../productPage/ProductCard";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import { fetchProducts } from "./../../redux/products/ProductsActions";
+import { Link } from "react-router-dom";
 
 SwiperCore.use([Pagination]);
 
@@ -35,7 +36,15 @@ function TrendingSection() {
 
     return (
         <div className="trending-section my-5">
-            <div className="fw-bold fs-2 pt-2 ls-1">Trending Now</div>
+            <div className="fw-bold fs-2 pt-2 ls-1">
+                Trending Now
+                <Link to={`/viewall`}>
+                <div className="view_all" style={{color:"#FF2020"}}>
+                    View all
+                </div>
+                </Link>
+            </div>
+            
             <div>
                 <Swiper
                     slidesPerView={changeSlideCount()}
