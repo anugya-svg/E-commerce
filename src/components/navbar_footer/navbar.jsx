@@ -44,7 +44,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item pe-4">
-                            <Link to="/about" className="nav-link fs-5 fw-bold color">
+                            <Link to="/wishlist" className="nav-link fs-5 fw-bold color">
                                 <i class="bi bi-heart"></i>
                             </Link>
                         </li>
