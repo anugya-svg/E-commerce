@@ -1,49 +1,47 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Check from '@material-ui/icons/Check';
-import StepConnector from '@material-ui/core/StepConnector';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import Check from "@material-ui/icons/Check";
+import StepConnector from "@material-ui/core/StepConnector";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
-import HomeIcon from '@material-ui/icons/Home';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-import AddressForm from './../components/checkoutPage/AddressForm';
-import Billing from '../components/checkoutPage/Billing';
-import Completed from './../components/checkoutPage/Completed';
-
+import HomeIcon from "@material-ui/icons/Home";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import AddressForm from "./../components/checkoutPage/AddressForm";
+import Billing from "../components/checkoutPage/Billing";
+import Completed from "./../components/checkoutPage/Completed";
+import { Link } from "react-router-dom";
 const useQontoStepIconStyles = makeStyles({
-    
   root: {
-    color: '#eaeaf0',
-    display: 'flex',
+    color: "#eaeaf0",
+    display: "flex",
     height: 22,
-    alignItems: 'center',
-    margin:'auto'
+    alignItems: "center",
+    margin: "auto",
   },
   active: {
-    color: '#784af4',
+    color: "#784af4",
   },
   circle: {
     width: 8,
     height: 8,
-    borderRadius: '50%',
-    backgroundColor: 'currentColor',
+    borderRadius: "50%",
+    backgroundColor: "currentColor",
   },
   completed: {
-    color: '#784af4',
+    color: "#784af4",
     zIndex: 1,
     fontSize: 18,
   },
 });
 
 function QontoStepIcon(props) {
-    
   const classes = useQontoStepIconStyles();
   const { active, completed } = props;
 
@@ -53,7 +51,11 @@ function QontoStepIcon(props) {
         [classes.active]: active,
       })}
     >
-      {completed ? <Check className={classes.completed} /> : <div className={classes.circle} />}
+      {completed ? (
+        <Check className={classes.completed} />
+      ) : (
+        <div className={classes.circle} />
+      )}
     </div>
   );
 }
@@ -74,45 +76,45 @@ const ColorlibConnector = withStyles({
     top: 22,
   },
   active: {
-    '& $line': {
+    "& $line": {
       backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
     },
   },
   completed: {
-    '& $line': {
+    "& $line": {
       backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
     },
   },
   line: {
     height: 3,
     border: 0,
-    backgroundColor: '#eaeaf0',
+    backgroundColor: "#eaeaf0",
     borderRadius: 1,
   },
 })(StepConnector);
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
-    backgroundColor: '#ccc',
+    backgroundColor: "#ccc",
     zIndex: 1,
-    color: '#fff',
+    color: "#fff",
     width: 50,
     height: 50,
-    display: 'flex',
-    borderRadius: '50%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    borderRadius: "50%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   active: {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
+    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
   },
   completed: {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(255, 32, 32) 0%, rgb(255, 32, 32) 100%)',
+      "linear-gradient( 136deg, rgb(255, 32, 32) 0%, rgb(255, 32, 32) 100%)",
   },
 });
 
@@ -155,7 +157,7 @@ ColorlibStepIcon.propTypes = {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '70%',
+    width: "75%",
   },
   button: {
     marginRight: theme.spacing(1),
@@ -167,25 +169,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Shipping details', 'Payment', 'Completed'];
+  return ["Shipping details", "Payment", "Completed"];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm/>;
+      return <AddressForm />;
     case 1:
-      return <Billing/>;
+      return <Billing />;
     case 2:
-      return <Completed/>;
+      return <Completed />;
     default:
-      return 'Unknown step';
+      return "Unknown step";
   }
 }
 
 export default function CustomizedSteppers() {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
   const handleNext = () => {
@@ -201,8 +203,12 @@ export default function CustomizedSteppers() {
   };
 
   return (
-    <div className={classes.root} style={{margin:'auto'}}>
-      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
+    <div className={classes.root} style={{ margin: "auto" }}>
+      <Stepper
+        alternativeLabel
+        activeStep={activeStep}
+        connector={<ColorlibConnector />}
+      >
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
@@ -212,27 +218,49 @@ export default function CustomizedSteppers() {
       <div>
         {activeStep === steps.length ? (
           <div>
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
+            <Typography>
+              Get latest collcetion from top brands from our store
             </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button
+                size="medium"
+                variant="filled"
+                style={{
+                  border: "1px solid #FF2020",
+                  color: "#FF2020",
+                  margin: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Shop Now
+              </Button>
+            </Link>
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+            <Typography className={classes.instructions}>
+              {getStepContent(activeStep)}
+            </Typography>
             <div>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+              <Button
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                className={classes.button}
+              >
                 Back
               </Button>
               <Button
-                variant="contained"
-                color="primary"
                 onClick={handleNext}
-                className={classes.button}
+                size="medium"
+                variant="filled"
+                style={{
+                  border: "1px solid #FF2020",
+                  color: "#FF2020",
+                  margin: "10px",
+                  fontWeight: "bold",
+                }}
               >
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                {activeStep === steps.length - 1 ? "Finish" : "Next"}
               </Button>
             </div>
           </div>
