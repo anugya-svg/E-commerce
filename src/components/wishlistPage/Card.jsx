@@ -3,8 +3,12 @@ import React from "react";
 import tempProduct from "./../../assets/tempProduct.jfif";
 import CurrencyFormat from "react-currency-format";
 import Button from "@material-ui/core/Button";
+import { useDispatch } from "react-redux";
+import { removeFromWishlist, addCart } from "./../../redux";
 
-function Card() {
+function Card(props) {
+    const dispatch = useDispatch();
+
     return (
         <div className="wishlist-card py-3">
             <div className="row">
@@ -32,7 +36,12 @@ function Card() {
                 </div>
                 <div className="col-4 d-flex justify-content-center align-items-center">
                     <div className="">
-                        <Button size="medium" variant="outlined" color="secondary">
+                        <Button
+                            size="medium"
+                            variant="outlined"
+                            color="secondary"
+                            onClick={() => dispatch(removeFromWishlist(props.data.id))}
+                        >
                             Remove
                         </Button>
                         <Button
@@ -45,6 +54,7 @@ function Card() {
                                 margin: "10px",
                                 fontWeight: "bold",
                             }}
+                            onClick={() => dispatch(addCart(props.data))}
                         >
                             Add to Cart
                         </Button>
