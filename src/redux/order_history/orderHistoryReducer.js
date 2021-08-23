@@ -1,5 +1,5 @@
 import { ORDER_HISTORY } from "./orderHistoryTypes";
-const orderHistoryReducer=(state={},action)=>{
+const orderHistoryReducer=(state=[],action)=>{
     console.log(state)
     if(action.type===ORDER_HISTORY)
     {
