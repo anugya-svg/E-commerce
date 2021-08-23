@@ -5,6 +5,8 @@ import styles from "./Cart.module.css";
 import Subtotal from "../components/cartPage/Subtotal";
 import { useSelector } from "react-redux";
 import CartProduct from "../components/cartPage/CartProduct";
+import { Link } from 'react-router-dom';
+
 
 function CartPage() {
     const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
@@ -22,6 +24,7 @@ function CartPage() {
                             width="130"
                             height="130"
                             class="img-fluid"
+                            alt="not found"
                         />
                         <h3>
                             <strong>Your Cart is Empty</strong>
@@ -33,8 +36,8 @@ function CartPage() {
         </div>
     ) : (
         <div className="container mt-5">
-            <div className="row">
-                <div className="col ">
+            <div className="d-flex" >
+                <div className="me-3" style={{width:"75%"}}>
                     <table className="table table-sm text-center">
                         <thead className={styles.border}>
                             <tr>
@@ -46,16 +49,24 @@ function CartPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {cart.map((product) => (
-                                <CartProduct product={product} key={product.id} />
-                            ))}
-                        </tbody>
-                    </table>
+                            {
+                                cart.map((product) => (
+                                    <CartProduct product={product} key={product.id}/>
+                                )) 
+                            }
+                    </tbody>
+                </table>
                 </div>
-                <div className="col ">
-                    <Subtotal />
-                    <Button />
+                <div className="" style={{width:"30%"}}>
+                        <Subtotal />
+                        <Link to="/checkout" style={{textDecoration:"none"}}>
+
+                        <Button size="medium" variant="contained" style={{backgroundColor:"#242B2E", border: "1px solid #242B2E", color: "#fff", margin: "10px", fontWeight: "bold" }}>
+                            Proceed to Checkout
+                        </Button>
+                        </Link>
                 </div>
+                
             </div>
         </div>
     );

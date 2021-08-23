@@ -1,0 +1,15 @@
+.comp{
+margin-top: -30px;
+}
+.ImageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.compImg{
+    width: 30%;
+}
+.text{
+    width: 45%;
+}

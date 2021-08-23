@@ -50,7 +50,7 @@ function CartProduct({ product }) {
                         value={product.price}
                         displayType={'text'}
                         thousandSeparator={true}
-                        prefix={'₹'}
+                        prefix={'Rs.'}
                         renderText={value => <div>{value}</div>}
                     /></td>
                 <td className="p-4">

@@ -1,0 +1,7 @@
+.inProgress svg {
+  fill: darkorange;
+}
+
+.incorrect svg {
+  fill: red;
+}
